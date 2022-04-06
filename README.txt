@@ -24,3 +24,12 @@ https://www.youtube.com/watch?v=DPmX85Tj8fY
 {
 Kiana Lede - EX()
 }
+
+
+
+--------------SORCE---------------------------
+CSS 연산자 정리
+https://code.tutsplus.com/ko/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+
+CSS 선택자의 이해
+https://www.nextree.co.kr/p8468/
