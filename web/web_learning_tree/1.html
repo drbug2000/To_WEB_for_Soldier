@@ -3,10 +3,36 @@
 <html>
 	
 	<head>
-	<title>HTML</title>
-	<meta charset="utf-8">
+		<title>HTML</title>
+		<meta charset="utf-8">
 		
+		<style>
+			a{
+				text-decoration: none;
+			}
+			
+			.saw{
+				color: gray;
+			}
+			
+			#active{
+				 color:red;
+				 font-weight: bold;
+			}
+			<!--우선순위는 가장 최근,가장 밑, 가장 태그에 가까운 / tag < class < id(유일) -->
+		</style>	
 	</head>
+		<h2 style="margin-top:60px;">
+				tree-learn_HTML 
+			</h2>
+			<h3>
+			<ol>
+				<li><a href="1.html" title="HTML문서" class="saw" id="active">HTML</a></li>
+				<li><a href="2.html" title="CSS문서" class="saw">CSS</a></li>
+				<li><a href="3.html" title="JavaScript 문서" class="saw">JavaScript</a></li>
+			</ol>
+		</h3>
+	
 		<h1>
 		HTML document	
 		</h1>	
