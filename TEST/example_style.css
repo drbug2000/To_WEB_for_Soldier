@@ -1,0 +1,52 @@
+
+			
+		body{
+			margin: 0;
+		}
+		.boxy {
+			border-bottom: 2px gray solid;
+			padding: 3px;
+			margin: 0px;
+			
+				
+			}
+			
+		.list{
+				
+			border-right:2px gray solid;
+			margin: 0px;
+			height: 1000px;
+			
+				
+		}
+			
+		.main{
+			padding: 5px;
+			margin: 5px;
+				
+				
+		}
+		#grid{
+				
+			display: grid;
+			grid-template-columns: 150px 1fr;
+				
+		}
+			
+	@media (max-width: 800px){
+	.boxy{
+		border:none;
+		text-align:center;
+	}
+	.list{
+		border-bottom: gray 2px solid;
+		border-top: gray 2px solid;
+		padding-left: 100px;
+		height:70px;
+		}
+	#grid{
+		display: block;	
+	}
+				
+}
+

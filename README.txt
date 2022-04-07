@@ -19,7 +19,7 @@ https://drbug2000.github.io/To_WEB_for_Soldier/
 
 
 --------------PLAY LIST------------------------
-𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 𝟐𝟎𝟐𝟏 올해 가장 인기가 많았던 잔잔한 팝송 [69곡](*)
+𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 𝟐𝟎𝟐𝟏 올해 가장 인기가 많았던 잔잔한 팝송 [69곡](**)
 https://www.youtube.com/watch?v=DPmX85Tj8fY
 {
 Kiana Lede - EX()
