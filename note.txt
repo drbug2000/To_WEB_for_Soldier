@@ -1,0 +1,22 @@
+1) parameter 값을 줄때 ''
+if(document.querySelector('#nightmode_togle').value=='day'){
+							document.querySelector('body').style.backgroundColor='white';
+							document.querySelector('body').style.color = 'black';
+			   				document.querySelector('#nightmode_togle').value='night';
+						}else{
+			   				document.querySelector('body').style.backgroundColor='black';
+			    			document.querySelector('body').style.color = 'white';
+			   				document.querySelector('#nightmode_togle').value='day';
+						}
+			   ">
+			   
+			   
+-------------------------------------------------------------------------
+document.querySelector('#nightmode_togle')
+에도 ' ' 안줬다고 안돌아감
+
+조심하자
+
+
+
+

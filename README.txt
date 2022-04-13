@@ -4,6 +4,8 @@ https://drbug2000.github.io/To_WEB_for_Soldier/
 
 2022.04.03 : HTML 공부 시작
 2022.04.04 : Github Web page 연결 / HTML 끝(?) (교재 상으로 진도 끝)
+2022.04.09 : 교재로 CSS 맛보기 끝
+2022.04.12 : Javascript 시작
 
 
 
@@ -33,7 +35,12 @@ City Wolf - Dead Man Walking
 Bishop Briggs - JEKYLL & HIDE
 }
 
+[PLAYLIST] 한 번 사는 인생 그냥 빌런처럼 막 살면 안되나?｜POP SONG PLAYLIST
+https://www.youtube.com/watch?v=pAhozLMiI2U
+{
+Man On The Moon-POWERS
 
+}
 --------------SORCE---------------------------
 CSS 연산자 정리
 https://code.tutsplus.com/ko/tutorials/the-30-css-selectors-you-must-memorize--net-16048
@@ -49,3 +56,8 @@ validator.w3.org
 
 CSS 검사기
 https://jigsaw.w3.org/css-validator/
+
+
+
+[연구실 대표 취재] 생물정보학 및 합성생물학 연구실
+https://bioeng.kaist.ac.kr/index.php?mid=bio_05_04&document_srl=11323

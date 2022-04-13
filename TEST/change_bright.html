@@ -24,8 +24,19 @@
 		day_and_night
 		</h1>
 		
-		<input type="button" value="day" onclick="">
-		<input type="button" value="night">
+		<input  type="button" value="night" 
+			   onclick="
+						var target =document.querySelector('body');
+						if(this.value==='day'){
+							target.style.backgroundColor='white';
+							target.style.color = 'black';
+			   				this.value='night';
+						}else{
+			   				target.style.backgroundColor='black';
+			    			target.style.color = 'white';
+			   				this.value='day';
+						}
+			   ">
 		
 			<ol class="list">
 			<li>1.바꾸기 할겁니다 딱대
