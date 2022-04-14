@@ -41,7 +41,27 @@ https://www.youtube.com/watch?v=pAhozLMiI2U
 Man On The Moon-POWERS
 
 }
+
+【Playlist】 내가 걷는 이곳이 런웨이 | 🔥자신감, 전투력 상승 플레이리스트 2탄
+https://www.youtube.com/watch?v=Rbn8VdBtRAo
+{
+Dear God- Ruben
+
+}
+
+지치고 우울할 때 편안하게 해주는 노래 30곡
+https://www.youtube.com/watch?v=d41r5AAKoXA
+{
+}
+
+[Playlist] 마음이 복잡하고 힘들 때 듣는 감성팝송 플레이리스트
+https://www.youtube.com/watch?v=6wJepYuiznU
+{
+
+Jeremy Zucker - always, i'll care()
+}
 --------------SORCE---------------------------
+
 CSS 연산자 정리
 https://code.tutsplus.com/ko/tutorials/the-30-css-selectors-you-must-memorize--net-16048
 
@@ -57,7 +77,13 @@ validator.w3.org
 CSS 검사기
 https://jigsaw.w3.org/css-validator/
 
-
+순수한 자바스크립트를 이용한 2D 벽돌깨기 게임
+https://developer.mozilla.org/ko/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
 
 [연구실 대표 취재] 생물정보학 및 합성생물학 연구실
 https://bioeng.kaist.ac.kr/index.php?mid=bio_05_04&document_srl=11323
+
+
+--------------------책
+
+https://shopping.interpark.com/product/productInfo.do?prdNo=7338717642
