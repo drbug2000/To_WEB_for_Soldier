@@ -6,7 +6,7 @@ https://drbug2000.github.io/To_WEB_for_Soldier/
 2022.04.04 : Github Web page 연결 / HTML 끝(?) (교재 상으로 진도 끝)
 2022.04.09 : 교재로 CSS 맛보기 끝
 2022.04.12 : Javascript 시작
-
+2022.04.17 : HTML+CSS+javaScript(생활코딩) 교재 1회독
 
 
 
@@ -82,6 +82,10 @@ https://developer.mozilla.org/ko/docs/Games/Tutorials/2D_Breakout_game_pure_Java
 
 [연구실 대표 취재] 생물정보학 및 합성생물학 연구실
 https://bioeng.kaist.ac.kr/index.php?mid=bio_05_04&document_srl=11323
+
+WebGL (libray)
+WebGL은 웹 기반의 그래픽 라이브러리이다. 자바스크립트 프로그래밍 언어를 통해서 사용할 수 있으며 호환성이 있는 웹 브라우저에서 인터랙티브한 3D 그래픽을 사용할 수 있도록 제공된다.
+https://code-masterjung.tistory.com/110
 
 
 --------------------책

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>insert_title</title>
+		<meta charset="utf-8">		
+		
+		
+		<style>
+			.box{
+				border:black 3px solid;
+				width: 70px;
+				text-align: center;
+				font-size: 15px;
+				
+			}
+		
+		
+		
+		</style>
+		
+		
+		<script>
+			
+			feel{
+				function Mover(){
+					this.color="red";
+					this.fontSize="20px";
+					this.border="5px solid red";
+					
+				}
+				
+				
+			}
+			
+			
+			Mouse{
+				var ptag = document.getElementById(self).style;
+				
+				function Mover(){
+					ptag.color="red";
+					ptag.fontSize="20px";
+					ptag.border="5px solid red";
+					
+				}
+				function Mout(){
+
+					ptag.color="black";
+					ptag.fontSize="15px";
+					ptag.border="3px solid black";
+				}
+		
+			}
+			
+		
+		</script>
+	</head>
+	
+	
+	<body>
+		
+		<h1>
+		prototype page	
+		</h1>
+		
+		
+		
+		
+		
+		
+		
+	<!--글자 입력 받고 처리해서 출력 -->
+		<form>
+			<fieldset>
+				<legend>숫자 입력 필드</legend>
+			
+				<lable>텍스트<input type="text" size="20"  placeholder="hint"></lable>
+				<input type="number" min="1" max="100" value="1" required>
+				<input type="range" min="1" max="20">
+				<input type="submit" value="전송">
+			</fieldset>	
+		</form>
+		
+		
+	<!--박스버튼 목록 만들고 마우스 올리면 반응 -->
+		
+		<div class=box onmouseover="feel.Mover();">
+			asdf
+		</div>
+		
+		
+		
+		
+	<!-- 박스버튼에 링크 연결 -->
+	</body>
+	
+	
+	
+</html>
