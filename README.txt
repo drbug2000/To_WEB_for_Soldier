@@ -42,7 +42,7 @@ Man On The Moon-POWERS
 
 }
 
-【Playlist】 내가 걷는 이곳이 런웨이 | 🔥자신감, 전투력 상승 플레이리스트 2탄
+【Playlist】 내가 걷는 이곳이 런웨이 | 🔥자신감, 전투력 상승 플레이리스트 2탄(*)
 https://www.youtube.com/watch?v=Rbn8VdBtRAo
 {
 Dear God- Ruben
