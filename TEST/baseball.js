@@ -7,8 +7,26 @@ var pitch = [ rand(), rand() , rand() ];
 var pitch = [];//같은 숫자 중복 회피 필요
 for(var i=0;i<3;i++){
 	pitch.push( rand() );
+	/*
+	for(var k=0;k<i;k++){
+		if(pitch[i]===pitch[k]){
+			pitch.pop();
+			pitch.push( rand() );
+			continue;	
+		}
+		
+	}
+	*/
+	var k=0;
+	while(k !== i){
+		if(pitch[i]===pitch[k]){
+			pitch.pop();
+			pitch.push( rand() );
+			continue;	
+		}
+		k++;	
+	}
 }
-
 
 
 var billboard = null;
