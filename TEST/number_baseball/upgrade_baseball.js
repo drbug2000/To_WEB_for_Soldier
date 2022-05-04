@@ -30,6 +30,7 @@ formTag.append(swingButton);
 
 var enter = document.createElement('input');
 formTag.append(enter);
+enter.maxLenth = 3;
 
 
 
