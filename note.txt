@@ -19,4 +19,8 @@ document.querySelector('#nightmode_togle')
 
 
 
+2) Java script는 기본적으로 call-by-value(ex 원시형)
+	일단 함수로 원본 값을 바꿀순없음 return해야함
+	대신  return으로 숫자 뿐만 아니라, 문자열, 배열도 그냥 가능
+
 

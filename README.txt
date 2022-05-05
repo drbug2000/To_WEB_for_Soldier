@@ -60,6 +60,9 @@ https://www.youtube.com/watch?v=6wJepYuiznU
 
 Jeremy Zucker - always, i'll care()
 }
+
+
+𝑀𝐴𝑋 – 𝑊𝑜𝑟𝑠ℎ𝑖𝑝(*)
 --------------SORCE---------------------------
 
 CSS 연산자 정리
