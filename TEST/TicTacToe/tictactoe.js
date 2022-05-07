@@ -30,7 +30,7 @@ for(var i =0;i< tableSize; i++){
 body.appendChild(table);
 
 
-
+//cell 클릭시 일어나는 반응
 function Fclick(e){
 	console.log("click work");
 	console.log(e.target);//그줄 
@@ -46,11 +46,56 @@ function Fclick(e){
 	
 	if(Checkwin(e.target)){
 		turn = Turnswitch(turn);
-		alert(turn+'의 승리!');		
+		alert(turn+'의 승리!');
 	}
 	
 	
 }
+
+
+
+function Checkwin(target){
+	
+	var coor =Findindex(target);
+	
+	//[col,row]
+	var col=coor[0];
+	var row=coor[1];
+	
+	console.log(col,row);
+	
+	//공통적으로 행과 열 확인
+	if(Checkcol(col)||Checkrow(row)){
+		console.log('행렬 체크 승리');
+		return true;
+	}
+	
+	
+	//대각선에 포함된 cell의 경우, 대각선도 계산
+	var cross = false;
+	
+	if( row===col ){//  \이런 대각선에 속해있는 경우
+		cross=cross||Checkcross(1);
+		
+		if(row+col===tableSize-1){//중앙에 속해있는 경우(tableSize가 짝수면 만족 X)
+			cross=cross||Checkcross(-1);	
+		}
+		
+	}else if( (row+col) === (tableSize-1) ){
+		cross= ( cross||Checkcross(-1) );		
+	}
+	
+	
+	//대각선 계산//  return을 한 번에 모으면 효율적이지 못하고, 매번하면 코드가 무거워져서 대안으로 행,열 / 대각선 나눠처리
+	if(cross){
+		console.log('대각 체크 승리');
+		return true;	
+	}
+	
+	console.log('체크 이상무');
+	return false;
+}
+
 
 
 function Turnswitch(turn){
@@ -78,24 +123,26 @@ function Checkarray(array){
 	return result;
 }
 
-function Checkrow(col){
-	
-	var temp=[];
-	
-	for(var i=0;i<tableSize; i++){
-		temp.push(matrix[col][i]);
-	}
-	
-	return Checkarray(temp);
-}
-
-function Checkcol(row){
+function Checkrow(row){
 	
 	var temp=[];
 	
 	for(var i=0;i<tableSize; i++){
 		temp.push(matrix[i][row]);
+		console.log('Checkrow :' + temp[i].textContent);
+	}
+	
+	return Checkarray(temp);
+}
+
+function Checkcol(col){
+	
+	var temp=[];
+	
+	for(var i=0;i<tableSize; i++){
+		temp.push(matrix[col][i]);
 		//console.log('Checkcol 결과 : '+temp);
+		console.log('Checkcol :' + temp[i].textContent);
 	}
 	return Checkarray(temp);
 	
@@ -103,7 +150,7 @@ function Checkcol(row){
 // 대각선 확인 함수  /:-1  \:1
 function Checkcross(c){
 	
-	var temp =[];
+	var temp = [];
 	var s;
 	
 	if(c>0){// \이런 대각선의 경우
@@ -153,47 +200,6 @@ function Checkcross(c){
 				 [Math.abs(s-i)][tableSize-i]
 				}
 */
-function Checkwin(target){
-	
-	var coor =Findindex(target);
-	
-	//[col,row]
-	var col=coor[0];
-	var row=coor[1];
-	
-	
-	
-	//공통적으로 행과 열 확인
-	if(Checkcol(col)||Checkrow(row)){
-		console.log('행렬 체크 승리');
-		return true;
-	}
-	
-	
-	//대각선에 포함된 cell의 경우, 대각선도 계산
-	var cross = false;
-	
-	if( row===col ){//  \이런 대각선에 속해있는 경우
-		cross=cross||Checkcross(1);
-		
-		if(row+col===tableSize-1){//중앙에 속해있는 경우(tableSize가 짝수면 만족 X)
-			cross=cross||Checkcross(-1);	
-		}
-		
-	}else if(row+col===tableSize-1){
-		cross=cross||Checkcross(-1);		
-	}
-	
-	
-	//대각선 계산//  return을 한 번에 모으면 효율적이지 못하고, 매번하면 코드가 무거워져서 대안으로 행,열 / 대각선 나눠처리
-	if(cross){
-		console.log('대각 체크 승리');
-		return true;	
-	}
-	
-	console.log('체크 이상무');
-	return false;
-}
 
 
 
@@ -229,5 +235,12 @@ Checkarray => 계속 true만 출력했으나, .textContent 로 어느 레벨에�
 	Checkcol true는 나오는데 왜지
 	한타이밍 늦게 뜨는거 같은디 || row, col이 잘못 되어있는거 같기도
 
+===> col과 row가 뒤집어짐
+=> 그냥 함수 이름/인수 헷갈림.....
 
+2차원 다룰시 [][]과 (n,n) 잘 정리 후 사용 하자.....(자꾸 처음 부터 뒤지고, 다시 정리 해야함)
+이 함수도 다시 해야할듯....
+
+
+종료부분만 만들면 될듯
 */

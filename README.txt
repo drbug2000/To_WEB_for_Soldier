@@ -63,6 +63,13 @@ Jeremy Zucker - always, i'll care()
 
 
 𝑀𝐴𝑋 – 𝑊𝑜𝑟𝑠ℎ𝑖𝑝(*)
+
+🐹내가 좋아하는 릴러말즈 노래모음 6시간 [PLAYLIST]🐹
+https://www.youtube.com/watch?v=DEdbxjBr9WE
+{
+
+}
+
 --------------SORCE---------------------------
 
 CSS 연산자 정리
