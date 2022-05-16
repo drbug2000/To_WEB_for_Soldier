@@ -24,3 +24,20 @@ document.querySelector('#nightmode_togle')
 	대신  return으로 숫자 뿐만 아니라, 문자열, 배열도 그냥 가능
 
 
+3) javascrt 코드를 HTML에서 실행할때 순서 주의
+	HTML문서도 위에서 아래로 읽는다
+	중간에 JS코드가 있으면 순서대로 실행한다
+	밑에있는 것은 로드가 되지 않은 채로 말이다
+	따라서 HTML과 코드의 순서도 신경쓰면서 코딩해야한다
+	
+4) for문 안에 비동기 함수가 들어있는 경우
+	비동기 : 순서대로 실행되지 않는 것
+	=> 문제가 발생하니 클로져를 배우기전까지는 사용 X
+	
+	ex) setTimeout(function 콜백함수(){
+	
+	},1000)
+	-> 이런건 for에 넣으면 오류남
+	
+5) 다른 것은 HTML과 JS에서 용어가 일치하지만, class는 JS에서 className
+	그리고 text-right => textRigt 이렇게 바꿔 써줘야함

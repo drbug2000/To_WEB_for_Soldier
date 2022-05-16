@@ -18,7 +18,7 @@ for(var i =0;i< tableSize; i++){
 		var cell=document.createElement('td');
 		cell.addEventListener('click',Fclick);
 		matrix[i].push(cell);
-		cell.textContent = String(i)+String(j);
+		//cell.textContent = String(i)+String(j);
 		rowTag.appendChild(cell);
 		
 		
@@ -51,7 +51,6 @@ function Fclick(e){
 	
 	
 }
-
 
 
 function Checkwin(target){
