@@ -97,6 +97,11 @@ WebGL (libray)
 WebGL은 웹 기반의 그래픽 라이브러리이다. 자바스크립트 프로그래밍 언어를 통해서 사용할 수 있으며 호환성이 있는 웹 브라우저에서 인터랙티브한 3D 그래픽을 사용할 수 있도록 제공된다.
 https://code-masterjung.tistory.com/110
 
+함수 선언식과 함수 표현식의 차이/장단점/활용방법
+https://joshua1988.github.io/web-development/javascript/function-expressions-vs-declarations/
+
+클로저 설명(before 'scope')
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
 
 --------------------책
 
