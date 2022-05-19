@@ -32,6 +32,8 @@ for(var i =0;i< tableSize; i++){
 body.appendChild(table);
 
 
+
+
 //cell 클릭시 일어나는 반응
 function Fclick(e){
 	console.log("click work");

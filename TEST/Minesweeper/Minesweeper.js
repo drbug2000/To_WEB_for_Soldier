@@ -7,23 +7,35 @@ var table = document.createElement('table');
 //행 row 열 column / cell
 
 var underground =[];//실제 지뢰 위치
-var matrix =[];//보여지는 게임판
+var gameboard =[];//보여지는 게임판 (구 matrix)
 //var turn='X';
+
+//underground 생성
+for(var i=0; i<tableSize ; i++){
+		underground.push([]);
+		for(var j=0;j<tableSize;j++){	
+		underground[i].push(0);
+		
+		}
+	
+	
+	}
+
+burial();
+settingNum();
 
 
 //본문 게임판 생성
 for(var i =0;i< tableSize; i++){
 	var rowTag = document.createElement('tr');
 		
-		matrix.push([]);
+		gameboard.push([]);
 	for(var j=0;j<tableSize; j++){
 		var cell=document.createElement('td');
 		cell.addEventListener('click',Fclick);
-		matrix[i].push(cell);
+		gameboard[i].push(cell);
 		//cell.textContent = String(i)+String(j);
 		rowTag.appendChild(cell);
-		
-		
 	}
 	
 	table.appendChild(rowTag);
@@ -32,16 +44,139 @@ for(var i =0;i< tableSize; i++){
 body.appendChild(table);
 
 
+
+
+
 //cell 클릭시 일어나는 반응
 function Fclick(e){
-	console.log("click work");
-	console.log(e.target);//그줄 
+	//console.log(e.target);//그줄 
 	//console.log(matrix.indexOf(e.target));
 	console.log(Findindex(e.target));
 	
+	var coor=Findindex(e.target);
+	var row = coor[0];
+	var col = coor[1];
+	
+	e.target.textContent = underground[row][col];
 	
 	
+}
+
+
+function Findindex(target){
 	
+	var row = null;
+	var col = null;
+	
+	for(var i =0 ; i<tableSize; i++){
+		
+		col = gameboard[i].indexOf(target);
+		if( col !== -1 ){
+			row = i; 
+			break;	
+		}
+	}
+	return [row,col];
+}
+
+
+//지뢰코드 -1
+function burial() {
+	
+	//지뢰 개수 오류
+	if( (tableSize**2) <= minecounts ){
+		console.log('minecounts errorr : too many mine');
+		return -1;
+	}
+	
+	var counts = minecounts;
+	var row;
+	var col;
+	while(counts != 0){
+		
+		row = Math.floor(Math.random()*tableSize);
+		col = Math.floor(Math.random()*tableSize);
+		
+		if(underground[row][col] < 0)
+			continue;
+		
+		underground[row][col] = -1 ;//지뢰 매설
+		counts--;
+	}
+	
+	
+
+    /*
+	for(var i=0; i<tableSize ; i++){
+		for(var j=0;j<tableSize;j++){	
+		}
+	}
+	*/
+}
+
+
+//지뢰 주변 3*3으로 +1을 뿌리는 함수
+function sprinkle(row,col){
+		
+		for(var i=-1; i<2 ; i++){
+			for(var j=-1; j<2;j++){	
+				if( (row+i<0)||(col+j<0)||(row+i>=tableSize)||(col+j>tableSize))
+					continue;
+				if(underground[row+i][col+j] === -1)
+					continue;
+				underground[row+i][col+j]++;
+			}
+	}
+}
+
+//지뢰주변에 숫자를 +1 뿌리기위해 지뢰를 찾는 함수(지뢰 매설 함수와 합쳐도 좋을듯 하다)
+function settingNum(){
+	
+	for(var i=0; i<tableSize ; i++){
+		for(var j=0;j<tableSize;j++){	
+			if(underground[i][j]<0)
+				sprinkle(i,j);		
+		}
+	}
+	
+}
+
+//2차 배열을 보여주는 디버깅용 함수(인데....console에서는 그냥 보여주네....)
+function showArray( array ){
+    
+	for(var i=0; i<tableSize ; i++){
+		var line=[];
+		
+		for(var j=0;j<tableSize;j++){	
+			line.push( Number(array[i][j]) );
+		}
+		console.log(line);
+	}
+	
+}
+
+
+//underground 시각으로 디버깅위한 함수 (only console)(show())
+function show(){
+	var temp=[];
+	for(var i =0;i< tableSize; i++){
+			var rowTag = document.createElement('tr');
+		
+			temp.push([]);
+		for(var j=0;j<tableSize; j++){
+			var cell=document.createElement('td');
+			cell.addEventListener('click',Fclick);
+			temp[i].push(cell);
+			cell.textContent = underground[i][j];
+			rowTag.appendChild(cell);
+		
+		
+		}
+	
+		table.appendChild(rowTag);
+		
+	}
+	body.appendChild(table);
 }
 
 /*
@@ -99,7 +234,7 @@ function Turnswitch(turn){
 	return turn;
 }
 
-*/
+
 
 
 function Checkarray(array){
@@ -159,37 +294,6 @@ function Checkcross(c){
 	return Checkarray(temp);
 }
 
-/*
-8가지를 검사 (행3 열3 대각2)
-3가지 유형
-	1)꼭지점 
-		자기 속한 행1,열1 + 대각1
-	2)변
-		자기 속한 행1, 열1
-	3)중앙
-		자기 속한 행1,열1+ 대각 2
-		
-	if(Findindex===[1,1]){
-	중앙값	
-	}else if(var sum=Findindex[0]+Findindex[1]%2===0){
-	꼭지값
-	}else {
-	변각
-	}
-	
-	검사식
-	행 [row][i] 
-	
-	열 [j][col]
-	
-	0,2/1,1/2,0
-	2,2/1,1/0,0
-	대각 sum===2 -> s=0	
-		else    -> s=tableSize
-				
-				for(var i =0;i<tableSize;i++){
-				 [Math.abs(s-i)][tableSize-i]
-				}
 */
 
 
@@ -197,41 +301,8 @@ function Checkcross(c){
 
 
 
-function Findindex(target){
-	
-	var row = null;
-	var col = null;
-	
-	for(var i =0 ; i<tableSize; i++){
-		
-		col = matrix[i].indexOf(target);
-		if( col !== -1 ){
-			row = i; 
-			break;	
-		}
-	}
-	return [row,col];
-}
 
 
 
 
 
-/*
-cross 함수 맛이감 /는 인덱스 오류, \는 계속 true 반복 = 해결
-
-Checkarray => 계속 true만 출력했으나, .textContent 로 어느 레벨에서 해야하는 지의 문제로 판명남
-
-행렬체크 승리 오류 = 잘되는거 같다가도 계속 하다보면 이상함
-	Checkcol true는 나오는데 왜지
-	한타이밍 늦게 뜨는거 같은디 || row, col이 잘못 되어있는거 같기도
-
-===> col과 row가 뒤집어짐
-=> 그냥 함수 이름/인수 헷갈림.....
-
-2차원 다룰시 [][]과 (n,n) 잘 정리 후 사용 하자.....(자꾸 처음 부터 뒤지고, 다시 정리 해야함)
-이 함수도 다시 해야할듯....
-
-
-종료부분만 만들면 될듯
-*/

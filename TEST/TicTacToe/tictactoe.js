@@ -15,7 +15,8 @@ for(var i =0;i< tableSize; i++){
 		
 		matrix.push([]);
 	for(var j=0;j<tableSize; j++){
-		var cell=document.createElement('td');
+		//cell == colTag
+		var cell = document.createElement('td');
 		cell.addEventListener('click',Fclick);
 		matrix[i].push(cell);
 		//cell.textContent = String(i)+String(j);
