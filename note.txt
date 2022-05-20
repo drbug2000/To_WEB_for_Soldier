@@ -55,3 +55,7 @@ document.querySelector('#nightmode_togle')
 9)JS 파일의 이름을 잘정하자
 	연결해놓은 HTML파일 이름 다 바꿔야함...
 	연결에러, 404등은 그런 오류일 수 있음
+	
+10)CSS HTML 구문 주의
+	matrix[1][1].backgroundColor => 그냥 조용히 undefined출력
+	matrix[1][1].style.backgroundColor => .style 때문에 그런거.. .이런 중간자(?) 주의 

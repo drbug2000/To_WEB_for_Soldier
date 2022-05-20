@@ -46,7 +46,6 @@ body.appendChild(table);
 
 
 
-
 //cell 클릭시 일어나는 반응
 function Fclick(e){
 	//console.log(e.target);//그줄 
@@ -56,8 +55,73 @@ function Fclick(e){
 	var coor=Findindex(e.target);
 	var row = coor[0];
 	var col = coor[1];
+	console.log(row);
+	console.log(col);
+	//e.target.textContent = underground[row][col];
 	
-	e.target.textContent = underground[row][col];
+	
+	
+	//판단 및 도굴함수
+	if(Excavate(row,col)===-1){
+			
+		
+		
+	}
+}
+
+
+function Excavate(row,col){
+	
+	
+	//벽인가
+	if( (row<0)||(col<0)||(row>=tableSize)||(col>=tableSize)){//벽(게임판 밖 제거)
+		console.log(row+'/'+col+'out of board');
+		return 0;
+	}
+	//지뢰인가
+	if(underground[row][col]<0){
+		var boom = document.createElement('img');
+		boom.src = "boom.PNG";
+		gameboard[row][col].appendChild(boom);
+		
+		alert('지뢰가 터졌습니다! 게임 종료');
+		return -1;
+	}
+	
+	//이미 열렸는가
+	if(gameboard[row][col].style.backgroundColor==='white') {
+		console.log(row+'/'+col+'already open');
+		return 0;
+	}
+	
+	if( underground[row][col] > 0 ){//숫자인 경우
+		
+		gameboard[row][col].textContent = underground[row][col];
+		gameboard[row][col].style.backgroundColor = 'white';
+		console.log(row+'/'+col+'num');
+		return 0;
+		
+	}else{//아직 열리지 않은 0인경우
+		
+		underground[row][col]=null;
+		gameboard[row][col].style.backgroundColor = 'white';
+		console.log(row+'/'+col+'');
+		Excavate(row-1,col);
+		Excavate(row,col-1);
+		Excavate(row+1,col);
+		Excavate(row,col+1);
+
+		return 0;
+	}
+	
+	console.log('Excavate function error : have no case');
+	return -2;
+	/*
+	ii.i)벽인가?
+	iii) 0<숫자인가?
+	iv) 0인가? 
+	*/
+	
 	
 	
 }
@@ -120,7 +184,7 @@ function sprinkle(row,col){
 		
 		for(var i=-1; i<2 ; i++){
 			for(var j=-1; j<2;j++){	
-				if( (row+i<0)||(col+j<0)||(row+i>=tableSize)||(col+j>tableSize))
+				if( (row+i<0)||(col+j<0)||(row+i>=tableSize)||(col+j>=tableSize))//벽(게임판 밖 제거)
 					continue;
 				if(underground[row+i][col+j] === -1)
 					continue;
@@ -133,9 +197,9 @@ function sprinkle(row,col){
 function settingNum(){
 	
 	for(var i=0; i<tableSize ; i++){
-		for(var j=0;j<tableSize;j++){	
+		for(var j=0;j<tableSize;j++){
 			if(underground[i][j]<0)
-				sprinkle(i,j);		
+				sprinkle(i,j);
 		}
 	}
 	

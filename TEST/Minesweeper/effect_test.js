@@ -32,7 +32,15 @@ for(var i =0;i< tableSize; i++){
 body.appendChild(table);
 
 
+var boom = document.createElement('img');
 
+boom.src = "boom.PNG";
+matrix[1][0].appendChild(boom);
+
+/*
+var src = document.getElementById("x");
+src.appendChild(img);
+*/
 
 //cell 클릭시 일어나는 반응
 function Fclick(e){
