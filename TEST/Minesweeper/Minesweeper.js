@@ -1,6 +1,11 @@
-var tableSize =5;//게임판의 크기
-var minecounts =4; //지뢰의 개수
+var tableSize =10;//게임판의 크기 (table**2)
+var minecounts =15; //지뢰의 개수
+/*본게임 난이도 참고
+초보: (9,9/10) 12.3%
+중급: (16,16/40) 15.6%
+고수: (30,16/99) 20.6%
 
+*/
 
 var body = document.body;
 var table = document.createElement('table');
@@ -9,6 +14,9 @@ var table = document.createElement('table');
 var underground =[];//실제 지뢰 위치
 var gameboard =[];//보여지는 게임판 (구 matrix)
 //var turn='X';
+
+//확인한 칸 개수 카운터
+var wincounts = 0;
 
 //underground 생성
 for(var i=0; i<tableSize ; i++){
@@ -20,9 +28,9 @@ for(var i=0; i<tableSize ; i++){
 	
 	
 	}
-
-burial();
-settingNum();
+//시작 위치 고려 전
+//burial();
+//settingNum();
 
 
 //본문 게임판 생성
@@ -59,13 +67,22 @@ function Fclick(e){
 	console.log(col);
 	//e.target.textContent = underground[row][col];
 	
+	//시작 위치 고려한 지뢰매설 
+	if(wincounts===0){
+		//gameboard[row][col].style.backgroundColor='white';
+		//underground[row][col]=null;
+		burial(row,col);
+		settingNum();
+	}
 	
 	
 	//판단 및 도굴함수
 	if(Excavate(row,col)===-1){
-			
-		
-		
+	
+	}
+	
+	if(wincounts>=(tableSize**2-minecounts)){
+		alert('지뢰를 모두 피했습니다! 게임 승리!');
 	}
 }
 
@@ -99,6 +116,8 @@ function Excavate(row,col){
 		gameboard[row][col].textContent = underground[row][col];
 		gameboard[row][col].style.backgroundColor = 'white';
 		console.log(row+'/'+col+'num');
+		//칸 한개 발견
+		wincounts++;
 		return 0;
 		
 	}else{//아직 열리지 않은 0인경우
@@ -106,11 +125,23 @@ function Excavate(row,col){
 		underground[row][col]=null;
 		gameboard[row][col].style.backgroundColor = 'white';
 		console.log(row+'/'+col+'');
+		
+		//3*3으로 확장(본게임에 가까운 알고리즘)
+		for(var i=-1; i<2 ; i++){
+			for(var j=-1; j<2;j++){	
+				Excavate(row+i,col+j);
+			}
+		}
+		
+		/*십자가로 확장
 		Excavate(row-1,col);
 		Excavate(row,col-1);
 		Excavate(row+1,col);
 		Excavate(row,col+1);
-
+		*/
+		
+		//칸 한개 발견
+		wincounts++;
 		return 0;
 	}
 	
@@ -145,7 +176,8 @@ function Findindex(target){
 
 
 //지뢰코드 -1
-function burial() {
+//x,y는 첫클릭 좌표
+function burial(x,y) {
 	
 	//지뢰 개수 오류
 	if( (tableSize**2) <= minecounts ){
@@ -161,6 +193,12 @@ function burial() {
 		row = Math.floor(Math.random()*tableSize);
 		col = Math.floor(Math.random()*tableSize);
 		
+		//첫클릭위치 0만들기
+		//3*3이내에 지뢰 설치 안하기
+		if( (Math.abs(row-x)<2)&&(Math.abs(col-y)<2) )
+			continue;
+			
+		//지뢰중복 제거
 		if(underground[row][col] < 0)
 			continue;
 		
@@ -243,130 +281,17 @@ function show(){
 	body.appendChild(table);
 }
 
+
+
+
 /*
-function Checkwin(target){
-	
-	var coor =Findindex(target);
-	
-	//[col,row]
-	var col=coor[0];
-	var row=coor[1];
-	
-	console.log(col,row);
-	
-	//공통적으로 행과 열 확인
-	if(Checkcol(col)||Checkrow(row)){
-		console.log('행렬 체크 승리');
-		return true;
-	}
-	
-	
-	//대각선에 포함된 cell의 경우, 대각선도 계산
-	var cross = false;
-	
-	if( row===col ){//  \이런 대각선에 속해있는 경우
-		cross=cross||Checkcross(1);
-		
-		if(row+col===tableSize-1){//중앙에 속해있는 경우(tableSize가 짝수면 만족 X)
-			cross=cross||Checkcross(-1);	
-		}
-		
-	}else if( (row+col) === (tableSize-1) ){
-		cross= ( cross||Checkcross(-1) );		
-	}
-	
-	
-	//대각선 계산//  return을 한 번에 모으면 효율적이지 못하고, 매번하면 코드가 무거워져서 대안으로 행,열 / 대각선 나눠처리
-	if(cross){
-		console.log('대각 체크 승리');
-		return true;	
-	}
-	
-	console.log('체크 이상무');
-	return false;
-}
+빈칸 선택시 확장되는 알고리즘이 원본게임과는 조금 다름
+위코드 : 십자가로 확장, 같은 함수 재귀 형식으로 부름
+본게임 : 우선 빈칸을 찾음(십자가가 아닌 3*3으로 연장) 이후 테두리를 전부 공개(밖으로 볼록도 공개)
+=> 정확한 알고리즘은 모르겠지만....방금 알아낸거 같은데 그냥 십자가가 아닌 3*3으로 수정하면 될지도
 
 
 
-function Turnswitch(turn){
-	
-	if(turn==='X'){
-		turn = 'O';		
-	}else{
-		turn= 'X';
-	}
-	return turn;
-}
-
-
-
-
-function Checkarray(array){
-	
-	result =true;
-	for(var i=0;i<tableSize-1;i++){
-		for(var j=i+1;j<tableSize;j++){
-		result = result && (array[i].textContent===array[j].textContent);
-		//console.log('기본어레이'+result+':'+i+j);
-		}
-	}
-	return result;
-}
-
-function Checkrow(row){
-	
-	var temp=[];
-	
-	for(var i=0;i<tableSize; i++){
-		temp.push(matrix[i][row]);
-		console.log('Checkrow :' + temp[i].textContent);
-	}
-	
-	return Checkarray(temp);
-}
-
-function Checkcol(col){
-	
-	var temp=[];
-	
-	for(var i=0;i<tableSize; i++){
-		temp.push(matrix[col][i]);
-		//console.log('Checkcol 결과 : '+temp);
-		console.log('Checkcol :' + temp[i].textContent);
-	}
-	return Checkarray(temp);
-	
-}
-// 대각선 확인 함수  /:-1  \:1
-function Checkcross(c){
-	
-	var temp = [];
-	var s;
-	
-	if(c>0){// \이런 대각선의 경우
-		s=0;
-	}else if(c<0){// /이런 대각선의 경우
-		s=tableSize-1;
-	}else{
-		console.log('function Checkcross error');
-	}
-	
-	for(var i =0;i<tableSize;i++){
-		temp.push(matrix[Math.abs(s-i)][i]);
-	}
-	
-	return Checkarray(temp);
-}
 
 */
-
-
-
-
-
-
-
-
-
-
 
