@@ -70,6 +70,11 @@ https://www.youtube.com/watch?v=DEdbxjBr9WE
 
 }
 
+
+
+https://www.youtube.com/watch?v=5r_GbhMRMZ0
+
+
 --------------SORCE---------------------------
 
 CSS 연산자 정리
@@ -103,6 +108,8 @@ https://joshua1988.github.io/web-development/javascript/function-expressions-vs-
 클로저 설명(before 'scope')
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
 
+이미지 스프라이트 사용법
+https://7942yongdae.tistory.com/95
 --------------------책
 
 https://shopping.interpark.com/product/productInfo.do?prdNo=7338717642

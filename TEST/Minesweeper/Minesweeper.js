@@ -41,6 +41,7 @@ for(var i =0;i< tableSize; i++){
 	for(var j=0;j<tableSize; j++){
 		var cell=document.createElement('td');
 		cell.addEventListener('click',Fclick);
+		cell.addEventListener('contextmenu',Fright);
 		gameboard[i].push(cell);
 		//cell.textContent = String(i)+String(j);
 		rowTag.appendChild(cell);
@@ -84,6 +85,37 @@ function Fclick(e){
 	if(wincounts>=(tableSize**2-minecounts)){
 		alert('지뢰를 모두 피했습니다! 게임 승리!');
 	}
+}
+
+//우클릭 함수
+function Fright(e){
+	e.preventDefault();
+	console.log(Findindex(e.target));
+	
+	var coor=Findindex(e.target);
+	var row = coor[0];
+	var col = coor[1];
+	console.log(row);
+	console.log(col);
+	
+	if(gameboard[row][col].style.backgroundColor !=='white'){
+		if(gameboard[row][col].textContent ===''){
+			gameboard[row][col].textContent = '!';
+			
+			//제어가 불안정해 아직 보류(사용해도 몇번 클릭하면 ?로 변하긴함)
+			/*
+			var flag = document.createElement('img');
+			flag.src = "flag.png";
+			gameboard[row][col].appendChild(flag);
+			*/
+			
+		}else if(gameboard[row][col].textContent ==='!'){
+			gameboard[row][col].textContent = '?';
+		}else if(gameboard[row][col].textContent ==='?'){
+			gameboard[row][col].textContent = '';
+		}
+	}
+	
 }
 
 

@@ -18,7 +18,18 @@ for(var i =0;i< tableSize; i++){
 		matrix.push([]);
 	for(var j=0;j<tableSize; j++){
 		var cell=document.createElement('td');
-		cell.addEventListener('click',Fclick);
+		//cell.addEventListener('click',Fclick);
+		
+		
+		
+		//cell.addEventListner('contextmenu',Fclick);
+		cell.addEventListener('contextmenu',function(e){
+			
+			e.preventDefault();
+			console.log('우클릭');
+			
+			
+		});
 		matrix[i].push(cell);
 		//cell.textContent = String(i)+String(j);
 		rowTag.appendChild(cell);
@@ -36,7 +47,7 @@ var boom = document.createElement('img');
 
 boom.src = "boom.PNG";
 matrix[1][0].appendChild(boom);
-
+matrix[1][1].classList.add('flag');
 /*
 var src = document.getElementById("x");
 src.appendChild(img);

@@ -59,3 +59,17 @@ document.querySelector('#nightmode_togle')
 10)CSS HTML 구문 주의
 	matrix[1][1].backgroundColor => 그냥 조용히 undefined출력
 	matrix[1][1].style.backgroundColor => .style 때문에 그런거.. .이런 중간자(?) 주의 
+	
+11)//cell.addEventListner('contextmenu',Fclick);
+	오타 하나때문에 ㅜㅠㅜㅠ이게 뭐고ㅜㅠㅠㅜㅜ
+	
+12) .target VS .currentTarget
+	.currentTarget : 이벤트리스너가 달린 대상을 리턴
+	.target : 실제 이벤트가 발생한 대상을 리턴
+	
+	ex) tbody.addEventListener(~~~, function(e)~~)
+		e.target => <td></td>
+		e.currentTarget => <tbody></tbody>
+		
+	-> 더 이해하자면 이벤트 버블링, 캡쳐링 을 알아야함
+	진짜 리스너가 달린 대상이냐, 그 자식 요소이냐...정도로 이해
