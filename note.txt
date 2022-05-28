@@ -73,3 +73,28 @@ document.querySelector('#nightmode_togle')
 		
 	-> 더 이해하자면 이벤트 버블링, 캡쳐링 을 알아야함
 	진짜 리스너가 달린 대상이냐, 그 자식 요소이냐...정도로 이해
+	
+13) 클로저 문제 (바인딩)
+	바인딩 예제
+	https://codingcoding.tistory.com/1054 
+	
+	렉시컬 환경과 클로저
+	https://velog.io/@goatyeonje/JavaScript-%EB%A0%89%EC%8B%9C%EC%BB%AC-%ED%99%98%EA%B2%BD%EA%B3%BC-%ED%81%B4%EB%A1%9C%EC%A0%80
+	
+14) .click
+	-> 해당 객체(요소)에 클릭 이벤트가 나타난 것처럼 작동
+
+15) .forEach(e)
+	e배열 요소에 대한 반복문
+	
+16) = something || ''
+	something이 거짓인 값이면 ''을 쓰고 그렇지 않으면 ''을 써라
+	거짓인 값 : false , 0 , '' , undefined, NaN, null
+	
+	**=> ? 왜? ||의 결과는 당연히 boolan 아님? 왜?
+	
+17) dictionary	
+	var dictionary = { key:dic,key: dic,}
+	dictionary.key === dic
+	이렇게 데이터를 정리 해서 사용가능
+	
