@@ -10,11 +10,13 @@ var body = document.body;
 var table = document.createElement('table');
 //행 row 열 column / cell
 
+
+
+
 var underground =[];//실제 지뢰 위치
 var gameboard =[];//보여지는 게임판
 
-//확인한 칸 개수 카운터
-var wincounts = 0;
+var wincounts = 0;//확인한 칸 개수 카운터
 
 //underground 생성
 for(var i=0; i<tableSize ; i++){
@@ -22,28 +24,69 @@ for(var i=0; i<tableSize ; i++){
 		for(var j=0;j<tableSize;j++){	
 		underground[i].push(0);
 		}
-	}
-
-//시작 위치 고려 전
-//burial();
-//settingNum();
-
+}
 
 //본문 게임판 생성
 for(var i =0;i< tableSize; i++){
 	var rowTag = document.createElement('tr');
 		gameboard.push([]);
 	for(var j=0;j<tableSize; j++){
+		
 		var cell=document.createElement('td');
 		cell.addEventListener('click',Fclick);
 		cell.addEventListener('contextmenu',Fright);
-		gameboard[i].push(cell);
-		//cell.textContent = String(i)+String(j);//debug
-		rowTag.appendChild(cell);
+	gameboard[i].push(cell);
+	//cell.textContent = String(i)+String(j);//debug
+	rowTag.appendChild(cell);
+		
 	}	
 	table.appendChild(rowTag);	
 }
 body.appendChild(table);
+
+
+//게임 세팅 함수 (시작/재시작)
+
+var start_button=document.getElementsByClassName('start_button')[0];
+
+//버튼 세팅
+start_button.addEventListener('click', function() {
+ 
+	if(start_button.textContent==='시작'){
+		start_button.textContent='다시';
+	}
+	gameset();
+});
+
+
+
+
+function gameset(){
+	
+	wincounts = 0;
+	
+	for(var i=0; i<tableSize ; i++){
+		
+		
+		for(var j=0;j<tableSize;j++){	
+		underground[i][j]=0;
+		}
+	}
+	
+	for(var i=0; i<tableSize ; i++){
+		
+		
+		for(var j=0;j<tableSize;j++){	
+		gameboard[i][j].style.backgroundColor='gray';
+		gameboard[i][j].textContent='';
+		}
+	}
+	
+		
+	
+}
+
+
 
 
 
@@ -80,6 +123,7 @@ function Fclick(e){
 		alert('지뢰를 모두 피했습니다! 게임 승리!');
 	}
 }
+
 
 //우클릭 함수
 function Fright(e){
@@ -258,7 +302,7 @@ function sprinkle(row,col){
 //지뢰주변에 숫자를 +1 뿌리기위해 지뢰를 찾는 함수(지뢰 매설 함수와 합쳐도 좋을듯 하다)
 function settingNum(){
 	
-	for(var i=0; i<tableSize ; i++){
+	for(var i=0; i<tableSize ; i++){ 
 		for(var j=0;j<tableSize;j++){
 			if(underground[i][j]<0)
 				sprinkle(i,j);

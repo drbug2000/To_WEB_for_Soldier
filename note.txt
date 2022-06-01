@@ -98,3 +98,6 @@ document.querySelector('#nightmode_togle')
 	dictionary.key === dic
 	이렇게 데이터를 정리 해서 사용가능
 	
+18)start_button[0].addEventListener('click', function()
+	document.getElementsByClassName으로 가져온 개체는 배열이다
+	변수에 저장해서 콘솔로 출력해도 잘되더니 addEventListener붙이니까 그냥 .addEventListener is not a function띄워버리네...

@@ -110,6 +110,10 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
 
 이미지 스프라이트 사용법
 https://7942yongdae.tistory.com/95
+
+git 브랜치 관리법
+https://www.inbogi.com/bok/2020/04/1/
+https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html
 --------------------책
 
 https://shopping.interpark.com/product/productInfo.do?prdNo=7338717642
