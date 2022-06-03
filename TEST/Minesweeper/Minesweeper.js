@@ -119,9 +119,13 @@ function Fclick(e){
 		//지뢰일 경우 이미 함수에서 판단함
 	}
 	
+	console.log('classList '+ gameboard[row][col].classList);
+	console.log('className '+ gameboard[row][col].className);
+	
 	if(wincounts>=(tableSize**2-minecounts)){
 		alert('지뢰를 모두 피했습니다! 게임 승리!');
 	}
+	
 }
 
 
@@ -137,7 +141,7 @@ function Fright(e){
 	console.log(col);
 	
 	//show '!' & '?'
-	if(gameboard[row][col].style.backgroundColor !=='white'){
+	if(gameboard[row][col].style.backgroundColor !=='white'){//////////////////////////////
 		if(gameboard[row][col].textContent ===''){
 			gameboard[row][col].textContent = '!';
 			
@@ -177,7 +181,7 @@ function Excavate(row,col){
 	}
 	
 	//이미 열렸는가
-	if(gameboard[row][col].style.backgroundColor==='white') {
+	if(gameboard[row][col].classList[0]==='open') {///////////////////////
 		console.log(row+'/'+col+'already open');
 		return 0;
 	}
@@ -185,7 +189,7 @@ function Excavate(row,col){
 	if( underground[row][col] > 0 ){//숫자인 경우
 		
 		gameboard[row][col].textContent = underground[row][col];
-		gameboard[row][col].style.backgroundColor = 'white';
+		gameboard[row][col].classList.add('open');/////////////////우선 그냥 '열림'으로 처리//////////
 		console.log(row+'/'+col+'num');
 		//칸 한개 발견
 		wincounts++;
@@ -194,13 +198,13 @@ function Excavate(row,col){
 	}else{//아직 열리지 않은 0인경우
 		
 		underground[row][col]=null;//0->null 이미 열렸음을 표시(check already opened)
-		gameboard[row][col].style.backgroundColor = 'white';
+		gameboard[row][col].classList.add('open');//////////////////////////
 		console.log(row+'/'+col+'');
 		
 		//3*3으로 확장(본게임에 가까운 알고리즘)
 		for(var i=-1; i<2 ; i++){
 			for(var j=-1; j<2;j++){	
-				Excavate(row+i,col+j);
+				Excavate(row+i,col+j);////////////
 			}
 		}
 		

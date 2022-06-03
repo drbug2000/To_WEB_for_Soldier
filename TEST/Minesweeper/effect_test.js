@@ -45,7 +45,7 @@ body.appendChild(table);
 
 var boom = document.createElement('img');
 
-boom.src = "boom.PNG";
+boom.src = "BOOM.png";
 matrix[1][0].appendChild(boom);
 matrix[1][1].classList.add('flag');
 /*
