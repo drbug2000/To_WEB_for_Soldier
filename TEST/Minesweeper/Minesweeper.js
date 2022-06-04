@@ -75,14 +75,12 @@ function gameset(){
 	
 	for(var i=0; i<tableSize ; i++){
 		
-		
 		for(var j=0;j<tableSize;j++){	
-		gameboard[i][j].style.backgroundColor='gray';
+		gameboard[i][j].classList='';
 		gameboard[i][j].textContent='';
+		//gameboard[i][j].style.backgroundPosition='0px -50px';
 		}
 	}
-	
-		
 	
 }
 
@@ -140,10 +138,13 @@ function Fright(e){
 	console.log(row);
 	console.log(col);
 	
+	
+	
+	
 	//show '!' & '?'
-	if(gameboard[row][col].style.backgroundColor !=='white'){//////////////////////////////
-		if(gameboard[row][col].textContent ===''){
-			gameboard[row][col].textContent = '!';
+	if(gameboard[row][col].classList[0] !=='open'){//////////////////////////////
+		if(gameboard[row][col].classList[0] ===undefined){
+			gameboard[row][col].classList.add('flag');
 			
 			//제어가 불안정해 아직 보류(사용해도 몇번 클릭하면 ?로 변하긴함 but error 발생)
 			/*
@@ -152,10 +153,13 @@ function Fright(e){
 			gameboard[row][col].appendChild(flag);
 			*/
 			
-		}else if(gameboard[row][col].textContent ==='!'){
-			gameboard[row][col].textContent = '?';
-		}else if(gameboard[row][col].textContent ==='?'){
-			gameboard[row][col].textContent = '';
+		}else if(gameboard[row][col].classList[0] ==='flag'){
+			gameboard[row][col].classList ='';
+			gameboard[row][col].classList.add('qmark');
+		}else if(gameboard[row][col].classList[0] ==='qmark'){
+			gameboard[row][col].classList ='';
+		}else{
+			console.log('R function have no case');
 		}
 	}
 	
@@ -170,26 +174,34 @@ function Excavate(row,col){
 		return 0;
 	}
 	
+	//이미 열렸는가+깃발이나 물음표 
+	if( (gameboard[row][col].classList[0] === 'open')||(gameboard[row][col].classList[0] === 'flag')) {///////////////////////
+		console.log(row+'/'+col+'already open');
+		return 0;
+	}
+	
 	//지뢰인가
 	if(underground[row][col]<0){
-		var boom = document.createElement('img');
+		
+		/*var boom = document.createElement('img');
 		boom.src = "boom.PNG";
 		gameboard[row][col].appendChild(boom);
+		*/
+		gameboard[row][col].classList.add('boom');
 		
 		alert('지뢰가 터졌습니다! 게임 종료');
 		return -1;
 	}
 	
-	//이미 열렸는가
-	if(gameboard[row][col].classList[0]==='open') {///////////////////////
-		console.log(row+'/'+col+'already open');
-		return 0;
-	}
+	
 	
 	if( underground[row][col] > 0 ){//숫자인 경우
 		
-		gameboard[row][col].textContent = underground[row][col];
+		//gameboard[row][col].textContent = underground[row][col];
+		
 		gameboard[row][col].classList.add('open');/////////////////우선 그냥 '열림'으로 처리//////////
+		gameboard[row][col].classList.add('num'+underground[row][col]);
+		//gameboard[row][col].style.backgroundPosition = -1 * underground[row][col] * 50+'px'+' 0px';
 		console.log(row+'/'+col+'num');
 		//칸 한개 발견
 		wincounts++;

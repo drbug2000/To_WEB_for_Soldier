@@ -102,15 +102,17 @@ document.querySelector('#nightmode_togle')
 	document.getElementsByClassName으로 가져온 개체는 배열이다
 	변수에 저장해서 콘솔로 출력해도 잘되더니 addEventListener붙이니까 그냥 .addEventListener is not a function띄워버리네...
 	
-19)CSS background 
+19)CSS background-position
 	왼쪽 위가 원점
 	원점으로부터 박스쪽이 + 
 	원점으로부터 바깥쪽이 -
 	
 			--방향(으로 이미지를 당김)	
-			  \	
+			  \
 			   \
 	ex)			원점------------
 				|\
 				| \
 				|	++방향(으로 이미지를 당김)
+				
+20)그냥 그림판으로 그림 건들면 노이즈 생김....
