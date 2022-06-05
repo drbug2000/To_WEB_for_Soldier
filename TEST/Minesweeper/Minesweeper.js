@@ -127,13 +127,6 @@ function Fright(e){
 		if(targetBoardCell.classList[0] ===undefined){
 			targetBoardCell.classList.add('flag');
 			
-			//제어가 불안정해 아직 보류(사용해도 몇번 클릭하면 ?로 변하긴함 but error 발생)
-			/*
-			var flag = document.createElement('img');
-			flag.src = "flag.png";
-			gameboard[row][col].appendChild(flag);
-			*/
-			
 		}else if(targetBoardCell.classList[0] ==='flag'){
 			targetBoardCell.classList ='';
 			targetBoardCell.classList.add('qmark');
@@ -168,10 +161,6 @@ function Excavate(row,col){
 	//지뢰인가
 	if( targetUnderCell<0){
 		
-		/*var boom = document.createElement('img');
-		boom.src = "boom.PNG";
-		gameboard[row][col].appendChild(boom);
-		*/
 		targetBoardCell.classList.add('boom');
 		
 		alert('지뢰가 터졌습니다! 게임 종료');
@@ -184,10 +173,11 @@ function Excavate(row,col){
 		
 		//gameboard[row][col].textContent = underground[row][col];
 		
-		targetBoardCell.classList.add('open');/////////////////우선 그냥 '열림'으로 처리//////////
+		targetBoardCell.classList.add('open');//'열림'으로 처리
 		targetBoardCell.classList.add('num'+ targetUnderCell);
 		//gameboard[row][col].style.backgroundPosition = -1 * underground[row][col] * 50+'px'+' 0px';
 		//console.log(row+'/'+col+'num');
+		
 		//칸 한개 발견
 		wincounts++;
 		return 0;
@@ -195,22 +185,15 @@ function Excavate(row,col){
 	}else{//아직 열리지 않은 0인경우
 		
 		targetUnderCell=null;//0->null 이미 열렸음을 표시(check already opened)
-		targetBoardCell.classList.add('open');//////////////////////////
+		targetBoardCell.classList.add('open');
 		//console.log(row+'/'+col+'');
 		
 		//3*3으로 확장(본게임에 가까운 알고리즘)
 		for(var i=-1; i<2 ; i++){
 			for(var j=-1; j<2;j++){	
-				Excavate(row+i,col+j);////////////
+				Excavate(row+i,col+j);
 			}
 		}
-		
-		/*십자가로 확장
-		Excavate(row-1,col);
-		Excavate(row,col-1);
-		Excavate(row+1,col);
-		Excavate(row,col+1);
-		*/
 		
 		//칸 한개 발견
 		wincounts++;
@@ -292,7 +275,7 @@ function settingNum(){
 			}
 		}
 	}
-	//little bug ㅎㅎ
+	
 	
 	for(var i=0; i<tableSize ; i++){ 
 		for(var j=0;j<tableSize;j++){
