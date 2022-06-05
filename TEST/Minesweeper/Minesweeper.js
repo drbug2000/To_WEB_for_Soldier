@@ -290,33 +290,23 @@ function burial(x,y) {
 		counts--;
 	}
 	
-	
-
-    /*
-	for(var i=0; i<tableSize ; i++){
-		for(var j=0;j<tableSize;j++){	
-		}
-	}
-	*/
 }
 
-
-//지뢰 주변 3*3으로 +1을 뿌리는 함수
-function sprinkle(row,col){
-		
-	for(var i=-1; i<2 ; i++){
-		for(var j=-1; j<2;j++){	
-			if( (row+i<0)||(col+j<0)||(row+i>=tableSize)||(col+j>=tableSize))//벽(게임판 밖 제거)
-				continue;
-			if(underground[row+i][col+j] === -1)
-				continue;
-			underground[row+i][col+j]++;
-		}
-	}
-}
 
 //지뢰주변에 숫자를 +1 뿌리기위해 지뢰를 찾는 함수(지뢰 매설 함수와 합쳐도 좋을듯 하다)
 function settingNum(){
+	
+	function sprinkle(row,col){//지뢰 주변 3*3으로 +1을 뿌리는 함수
+		for(var i=-1; i<2 ; i++){
+			for(var j=-1; j<2;j++){	
+				if( (row+i<0)||(col+j<0)||(row+i>=tableSize)||(col+j>=tableSize))//벽(게임판 밖 제거)
+					continue;
+				if(underground[row+i][col+j] === -1)
+					continue;
+				underground[row+i][col+j]++;
+			}
+		}
+	}
 	
 	for(var i=0; i<tableSize ; i++){ 
 		for(var j=0;j<tableSize;j++){
@@ -380,6 +370,6 @@ function show(){
 /* refactoring 
   Fclick / excuvate => 합치기 혹은 통합 필요 (wincounts등 조정 필요)
   burial / sprinkle => 합치기 고려 (꼭 다른 함수로 작성해야하나?)
-  .background 같은건 CSS class 로 처리해 적용하는게 더 낫지 않나(opened 같은 클래스로)
-  재귀함수 효율성 고려 
+  $$ .background 같은건 CSS class 로 처리해 적용하는게 더 낫지 않나(opened 같은 클래스로)
+  $$ 재귀함수 효율성 고려 
 */

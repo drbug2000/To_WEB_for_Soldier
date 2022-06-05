@@ -20,14 +20,11 @@ for(var i =0;i< tableSize; i++){
 		var cell=document.createElement('td');
 		//cell.addEventListener('click',Fclick);
 		
-		
-		
 		//cell.addEventListner('contextmenu',Fclick);
 		cell.addEventListener('contextmenu',function(e){
 			
 			e.preventDefault();
 			console.log('우클릭');
-			
 			
 		});
 		matrix[i].push(cell);
