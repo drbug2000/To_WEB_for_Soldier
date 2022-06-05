@@ -7,6 +7,8 @@ Minesweeper- 지뢰찾기게임
 2022-06-01 : 게임 세팅함수 및 재시작 버튼 branch로 만들고  main에 병합함
 2022-06-04 : 기존 sprite를 이용해 이미지 입힘/ class를 이용해 이미지 조작
 2022-06-05 : 이미지 조작 버그 수정 / 코드 refactoring 완료
+이상 MineSweeper 개발 종료...!
+
 
 
 그... git을 단순히 백업이 아니라, feature별로 branch 해서 개발해보는 건 어떨까?

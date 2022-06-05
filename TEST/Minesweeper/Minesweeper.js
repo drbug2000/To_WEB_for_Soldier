@@ -292,6 +292,7 @@ function settingNum(){
 			}
 		}
 	}
+	//little bug ㅎㅎ
 	
 	for(var i=0; i<tableSize ; i++){ 
 		for(var j=0;j<tableSize;j++){
