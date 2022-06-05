@@ -11,7 +11,56 @@
 				text-align: center;
 				
 			}
-		
+			table{/*왜 작동안해...*/
+				border-collapse: separate;
+				border-spacing: 2px;
+			}
+			td{
+				width: 200px;
+				height: 200px;
+				text-align: center;
+				font-weight: bold;
+				font-size: 75px;
+				
+				/*background-color: white;*/
+			
+				border: 1px solid black;
+				/*line-height:1;*/
+				/*border :0;*/
+				padding : 10;
+				background-position: 0 0;
+				display: inline-block;
+				background-size:200px 200px;
+			}
+			caption{
+				text-align: left;
+				font-size:50px;
+				color: blue;
+			}
+			#link_minesweeper{
+				
+				background: url('sources/minesweeper_image.JPG') no-repeat;
+				/*background-color: rgba( 255, 255, 255, 0 );*/
+				color: yellow;
+				
+				
+			}
+			#link_numbaseball{
+				background: url('sources/numbaseball_image.JPG') no-repeat;
+				
+			}
+			#link_tictactoe{
+				background: url('sources/tictactoe_image.JPG') no-repeat;
+				background-size:205px 205px;
+				color: gray;
+			}
+			.commingsoon{
+				background: url('sources/justfrog.jpg') no-repeat;
+				background-size: cover;
+				background-position: -50px 0;
+				color: white;
+				
+			}
 		
 		</style>
 		
@@ -24,7 +73,7 @@
 		
 		<h1>
 			<!--<a href="index.html" title="index">WEB</a>-->
-			<a href="TEST/Minesweeper/Minesweeper.html" title="index">지뢰찾기 링크입니닷 예원공주님 </a>
+			<a href="TEST/Minesweeper/Minesweeper.html" title="index">지뢰찾기 코드정리하고 마무리 했습니다 </a>
 		</h1>
 		
 		
@@ -32,7 +81,18 @@
 			<h2 style="margin-top:60px;">
 				<a href="web/first_web.html">first_web</a>
 			</h2>
-		
+			<h2>
+				<table>
+					<caption>웹 게임 목록</caption>
+					<tr>
+					<td id='link_minesweeper' onclick="window.open('TEST/Minesweeper/Minesweeper.html');" style="cursor:pointer;">지뢰찾기</td>
+					<td id='link_numbaseball' onclick="window.open('TEST/number_baseball/num_baseball_simulator.html');" style="cursor:pointer;">숫자야구</td>	
+					<td id='link_tictactoe' onclick="window.open('TEST/TicTacToe/tictactoe.html');" style="cursor:pointer;">틱택토</td>
+					<td class='commingsoon'>커밍쑨!</td>
+					</tr>
+				</table>
+				
+			</h2>
 		
 			<h2 style="margin-top:60px;">
 				tree-learn_HTML 
