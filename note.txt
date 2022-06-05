@@ -116,3 +116,8 @@ document.querySelector('#nightmode_togle')
 				|	++방향(으로 이미지를 당김)
 				
 20)그냥 그림판으로 그림 건들면 노이즈 생김....
+
+21)//gameboard[i][j].style.backgroundPosition='0px -50px';
+	JS 코드로 CSS를 조작하면 class로 조작이 꼬임
+	JS코드가 우선순위가 있나봄
+	=> 할꺼면 하나로 하는게 좋을듯. 직접속성 조정/class로 조정
