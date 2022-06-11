@@ -9,7 +9,6 @@ var end_time;
 var result= [];
 var temp;
 
-
 main_sign.textContent='게임을 시작하려면 클릭';
 sub_sign.textContent='';
 
