@@ -9,6 +9,8 @@ https://drbug2000.github.io/To_WEB_for_Soldier/
 2022.04.17 : HTML+CSS+javaScript(생활코딩) 교재 1회독
 2022.04.17 : goorm edu '웹 게임을 만들며 배우는 JavsScript' 강의 시작
 2022.05.18 : 강의를 들으며 여러 게임을 개발, 이후 자체적으로 'MineSweeper'개발 시작
+2022.06.05 : Minesweeper 개발 종료
+2022.06.11 : 일주일 휴식후 reaction test 게임 개발 시작/완료
 
 
 
