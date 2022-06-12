@@ -131,3 +131,6 @@ document.querySelector('#nightmode_togle')
 	
 24) CSS 기본적으로 상속이 안됨...
 	상속 시키려면 inherit 속성을 지정해줘야 상속함
+	
+	
+	

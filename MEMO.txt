@@ -121,6 +121,10 @@ https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html
 
 **js에서 class다루기 
 https://hianna.tistory.com/469
+
+recursive?
+https://www.atlassian.com/git/tutorials/using-branches/merge-strategy
+
 --------------------책
 
 https://shopping.interpark.com/product/productInfo.do?prdNo=7338717642
