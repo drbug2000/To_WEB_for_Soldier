@@ -84,7 +84,7 @@ document.querySelector('#nightmode_togle')
 14) .click
 	-> 해당 객체(요소)에 클릭 이벤트가 나타난 것처럼 작동
 
-15) .forEach(e)
+15) .forEach(e) 
 	e배열 요소에 대한 반복문
 	
 16) = something || ''
