@@ -13,40 +13,48 @@
 				padding:0;
 			}
 			table{
+				
+				background-position: 0 -50px;
 				border-collapse: collapse;
 				
 			}
 			tbody {
 				background: url('sprite50.gif') no-repeat;
+				
 			}
+			
 			tr {
 				background: inherit;
 			}
-			td{
+			
+			td {
 				background: inherit;
 				background-position: 0 -50px;
+				
+				
 				width: 50px;
-				height: 50px;	
+				height: 50px;
+				text-align: center;
+				font-weight: bold;
+				font-size: 38px;
+				background-color: gray;
+				
 				border: 1px solid black;
 				/*line-height:1;*/
 				/*border :0;*/
 				padding : 0;
+			}
+			
+			td {
 				display: inline-block;
+				
+				
 				width: 50px;
 				height: 50px;
+				
 			}
-			button {
-				font-size: 30px;
-				border: 0;	
-				outline: none;
-				cursor: pointer;
-				border-radius: 10px;
-				margin:5px;
-			}
-			button:hover {
-  				color: white;
-  				background: orange;
-			}
+			
+
 			.open {
 				background-position: 0 0px;
 			}
@@ -86,17 +94,12 @@
 				background: url('BOOM.png') no-repeat;
 				background-position: 0 0px;
 			}
+			
+			
 			.frogy {
 				background: url(frogy/frog_sprite.png) no-repeat;
 			}
-			.inactive_mode{
-				background-color: #D8EE9C;
-				color: #4CAF50;
-			}
-			.active_mode {
-				background-color: #4CAF50; /* Green */
-  				color: white;
-			}
+			
 		</style>
 		
 	</head>
@@ -108,14 +111,28 @@
 		Minesweeper page
 		</h1>
 		
-		<button class="start_button">시작</button>
-		<!--
-		<script src="effect_test.js"></script>
-		-->	
-		<script src="Minesweeper.js"></script>
-		<button id="frogy_toggle" class="inactive_mode">개구리 모드 시작</button>
-		<script src="frogy_toggle.js"></script>
+		<table>
+			
+			<tr>
+				<td class='flag'>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>	
+			
+		</table>
 		
+		<!--
+		<button class="start_button">시작</button>
+		
+		
+		<script src="effect_test.js"></script>
+		
+		
+		<script src="Minesweeper.js"></script>
+		<button id="frogy_toggle">개구리 모드 시작</button>
+		<script src="frogy_toggle.js"></script>
+		-->	
 		
 		
 	</body>

@@ -8,6 +8,8 @@ var minecounts =15; //지뢰의 개수
 
 var body = document.body;
 var table = document.createElement('table');
+var tbody = document.createElement('tbody');
+
 //행 row 열 column / cell
 
 
@@ -38,9 +40,12 @@ for(var i =0;i< tableSize; i++){
 		rowTag.appendChild(cell);
 		
 	}	
-	table.appendChild(rowTag);	
+	tbody.appendChild(rowTag);
+	
 }
+table.appendChild(tbody);	
 body.appendChild(table);
+
 
 
 //게임 세팅 함수 (시작/재시작)
@@ -49,8 +54,8 @@ var start_button=document.getElementsByClassName('start_button')[0];
 //버튼 세팅
 start_button.addEventListener('click', function() {
  
-	if(start_button.textContent==='시작'){
-		start_button.textContent='다시';
+	if(start_button.textContent!=='시작'){
+		start_button.textContent='시작';
 	}
 	gameset();
 });
@@ -92,6 +97,7 @@ function Fclick(e){
 	if(wincounts===0){
 		//gameboard[row][col].style.backgroundColor='white';
 		//underground[row][col]=null;
+		start_button.textContent='다시 시작';
 		burial(row,col);
 		settingNum();
 	}
@@ -104,6 +110,7 @@ function Fclick(e){
 	
 	if(wincounts>=(tableSize**2-minecounts)){
 		alert('지뢰를 모두 피했습니다! 게임 승리!');
+		start_button.textContent='시작';
 	}
 	
 }

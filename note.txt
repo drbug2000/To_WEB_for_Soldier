@@ -129,8 +129,21 @@ document.querySelector('#nightmode_togle')
 23)settimeout함수 (공식문서?)
 	https://developer.mozilla.org/ko/docs/Web/API/setTimeout
 	
-24) CSS 기본적으로 상속이 안됨...
-	상속 시키려면 inherit 속성을 지정해줘야 상속함
+24) CSS 기본적으로 상속이 안되는 속성들이 있음...(background 같은거)
+   상속시키려면 inherit 속성을 지정해줘야 상속함
+	
+	
+25)git revert/reset 사용법
+	https://www.lainyzine.com/ko/article/git-revert-reverting-commit-in-git-repository/
+	reset은 로컬저장소에서 진짜 지워버리는거, revert는 커밋을 남기고 되돌리는거
+	꼭 바로 전 꺼만 안해도 된다 옛날 중간꺼도 가능(역 연산을 함)
+	
+	
+26) classList
+	https://developer.mozilla.org/ko/docs/Web/API/Element/classList
+	css class를 js에서 다루기
+	지금까지 내가 아는 유일한 기술....
+	가장 안전하고, 간결하게 CSS를 다루는 방법..
 	
 	
 	

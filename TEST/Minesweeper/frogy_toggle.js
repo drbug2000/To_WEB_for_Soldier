@@ -1,19 +1,27 @@
-var theme = ["url(frogy/frog_sprite.png) no-repeat","url('sprite50.gif') no-repeat"];
+
 
 var frogy_toggle=document.getElementById('frogy_toggle');
+var tbody = document.getElementsByTagName('tbody')[0];
 
-frogy_toggle.addEventListener('click', function toggle(e){
+frogy_toggle.addEventListener('click', function toggle(){
 	
-	for (var i of document.getElementsByTagName('td')){
-		
-		i.style.background = theme[0];
+	var tbody = document.getElementsByTagName('tbody')[0];
+	tbody.classList.toggle("frogy");
 	
+	
+	
+	if(frogy_toggle.classList.toggle("active_mode")){//when inactive
+		frogy_toggle.textContent="개구리 모드 종료";	
 		
+		
+		
+	}else{
+		frogy_toggle.textContent="개구리 모드 시작";	
 	}
 	
-	var temp = theme[0];
-	theme[0]=theme[1];
-	theme[1]=temp;
+	frogy_toggle.classList.toggle("inactive_mode")
+	
+	
 	
 	
 	
