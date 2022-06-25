@@ -11,6 +11,7 @@ https://drbug2000.github.io/To_WEB_for_Soldier/
 2022.05.18 : 강의를 들으며 여러 게임을 개발, 이후 자체적으로 'MineSweeper'개발 시작
 2022.06.05 : Minesweeper 개발 종료
 2022.06.11 : 일주일 휴식후 reaction test 게임 개발 시작/완료
+2022.06.25 : 건강 상의 이유로 휴식 후 다시 개발 재게 + frogy_mode 지뢰찾기에 적용
 
 
 
@@ -74,7 +75,8 @@ https://www.youtube.com/watch?v=DEdbxjBr9WE
 }
 
 [PLAYLIST] 빌런이 세계를 삼키러 갈 때｜POP SONG PLAYLIST()
-https://www.youtube.com/watch?v=A8XttQMR16Q{
+https://www.youtube.com/watch?v=A8XttQMR16Q
+{
 
 
 }

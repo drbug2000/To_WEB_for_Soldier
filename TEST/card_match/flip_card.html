@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+	
+	<head>
+		<title>filp card example</title>
+		<meta charset="utf-8">		
+		
+		<style>
+			/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+			.flip-card {
+  				background-color: transparent;
+  				width: 300px;
+  				height: 300px;
+  				border: 1px solid #f1f1f1;
+  				perspective: 1000px; /* Remove this if you don't want the 3D effect */
+			}
+
+			/* This container is needed to position the front and back side */
+			.flip-card-inner {
+  				position: relative;
+  				width: 100%;
+  				height: 100%;
+  				text-align: center;
+  				transition: transform 0.8s;
+  				transform-style: preserve-3d;
+			}
+
+			/* Do an horizontal flip when you move the mouse over the flip box container */
+			.flip-card:hover .flip-card-inner {
+			  	transform: rotateY(180deg);
+			}
+
+			/* Position the front and back side */
+			.flip-card-front, .flip-card-back {
+  				position: absolute;
+  				width: 100%;
+  				height: 100%;
+  				-webkit-backface-visibility: hidden; /* Safari */
+  				backface-visibility: hidden;
+			}
+
+			/* Style the front side (fallback if image is missing) */
+			.flip-card-front {
+  				background-color: #bbb;
+  				color: black;
+				background-color: gray;
+			}
+
+			/* Style the back side */
+			.flip-card-back {
+  				background-color: yellowgreen;
+  				color: white;
+  				transform: rotateY(180deg);
+				
+			}
+		
+		</style>
+	</head>
+	
+	
+	<body>
+		
+		<h1>
+		카드 뒤집는 효과 in CSS
+		</h1>
+		<h2>
+		카드위에 마우스를 가져다 대십시오
+		</h2>
+		<div>
+			사실 하나도 모르겠음 그냥 갖다 쓴거임
+		</div>
+		
+		<div class="flip-card">
+			<div class="flip-card-inner">
+ 				<div class="flip-card-front">
+      				<img src="../../sources/tabikaaeru_image.png"  alt="frog" style="width:300px;height:300px;">
+    			</div>
+					
+    			<div class="flip-card-back">
+					<h1> 
+					this is a test
+					</h1>
+					<p>
+					my name is sang june
+					</p>
+					<p>
+					this CSS is f**king hard 	
+					</p>
+					<p>
+					this frog image is 旅かえる
+					and Embezzlement
+					</p>
+					 
+					
+          		</div>
+  			</div>
+			
+		</div>
+		
+	</body>
+
+</html>

@@ -8,6 +8,7 @@ Minesweeper- 지뢰찾기게임
 2022-06-04 : 기존 sprite를 이용해 이미지 입힘/ class를 이용해 이미지 조작
 2022-06-05 : 이미지 조작 버그 수정 / 코드 refactoring 완료
 이상 MineSweeper 개발 종료...!
+2022-06-25 : 2일간의 고뇌 끝에 frogy_mode 기능 추가
 
 
 
@@ -61,9 +62,10 @@ $$ 3. 사진을 유기적으로 구성해 마치 움직이는 것처럼 보이�
 ex) 현재 qmark class + boom class 있는 블록이 이상해짐
 => class의 적용 문제 .boom에는 background-position 설정이 없었음
 
-
-
-
+!)어떻게 모든 td태그에 속성을 바꿀까
+	<style></style>내부는 도저히 js로 제어할 방법을 찾지 못했다
+	상위 태그에 클래스를 주고, table->tbody->tr->td의 상속을 이용함
+	background는 기본 상속X이기 때문에 각각 inherit을 줌
 
 
 +)
