@@ -145,5 +145,8 @@ document.querySelector('#nightmode_togle')
 	지금까지 내가 아는 유일한 기술....
 	가장 안전하고, 간결하게 CSS를 다루는 방법..
 	
+27) 자손/형제 태그 선택
+	https://itun.tistory.com/501
+	
 	
 	

@@ -6,12 +6,20 @@
 		<meta charset="utf-8">		
 		
 		<style>
+			
+			.gameboard{
+				width: 800px;
+				height: 900px;	
+			}
 			/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 			.flip-card {
+				display: inline-block;
+				margin-right: 20px;
+				margin-bottom:20px;
   				background-color: transparent;
-  				width: 300px;
-  				height: 300px;
-  				border: 1px solid #f1f1f1;
+  				width: 170px;
+  				height: 180px;
+  				border: none;
   				perspective: 1000px; /* Remove this if you don't want the 3D effect */
 			}
 
@@ -26,7 +34,7 @@
 			}
 
 			/* Do an horizontal flip when you move the mouse over the flip box container */
-			.flip-card:hover .flip-card-inner {
+			.flip-card.flipped .flip-card-inner {
 			  	transform: rotateY(180deg);
 			}
 
@@ -43,7 +51,7 @@
 			.flip-card-front {
   				background-color: #bbb;
   				color: black;
-				background-color: gray;
+				background-color: skyblue;
 			}
 
 			/* Style the back side */
@@ -51,7 +59,7 @@
   				background-color: yellowgreen;
   				color: white;
   				transform: rotateY(180deg);
-				
+				border: 2px solid black;
 			}
 		
 		</style>
@@ -66,6 +74,8 @@
 		<h2>
 		카드위에 마우스를 가져다 대십시오
 		</h2>
+		
+		<!--
 		<div>
 			사실 하나도 모르겠음 그냥 갖다 쓴거임
 		</div>
@@ -90,13 +100,13 @@
 					this frog image is 旅かえる
 					and Embezzlement
 					</p>
-					 
-					
           		</div>
   			</div>
-			
 		</div>
+		-->
 		
+		<script src='card_match.js'></script>
+		<script src='flip_effact.js'></script>	
 	</body>
 
 </html>
