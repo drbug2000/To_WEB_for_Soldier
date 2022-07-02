@@ -11,6 +11,9 @@ var pair=[];
 
 var success=[];
 
+var star_time =0; 
+var end_time =0;
+
 function suffle(array){
 	var temp = null;
 	
@@ -28,6 +31,7 @@ body.appendChild(gameboard);
 
 suffle(color);
 
+//setting
 for(var i=0;i<card;i++){
 	
 	var flip_card = document.createElement('div');
@@ -40,8 +44,31 @@ for(var i=0;i<card;i++){
 	flip_card_back.className='flip-card-back';
 	flip_card_back.style.backgroundColor=color[i];
 	
-	(function (c){
-	flip_card.addEventListener('click',function(){
+	addCardListener(flip_card);
+	
+	gameboard.appendChild(flip_card);
+	flip_card.appendChild(flip_card_inner);
+	flip_card_inner.appendChild(flip_card_front);
+	flip_card_inner.appendChild(flip_card_back);
+	
+}
+function start(){
+	
+	suffle(color);
+	star_time=new Date;
+	//뒷면 색깔세팅 다시
+	for(var i=0;i<card;i++){
+		gameboard.childNodes[i].childNodes[0].childNodes[1].style.backgroundColor=color[i];;
+				
+	}
+}
+start();
+
+function addCardListener(c){
+	
+	//얘를 밖으로 빼면 c.을 전부 수정하고 매개변수로 바꿔야해서 그냥 넣어두고 flag로 조절하겠음
+	//굳이 removeEventListener를 안쓰고 해보겠음
+	c.addEventListener('click',function(){
 		if(click_flag && !c.classList.contains('flipped')){
 			c.classList.add('flipped');
 			//console.log(c.childNodes[0].childNodes[1]);
@@ -54,7 +81,7 @@ for(var i=0;i<card;i++){
 					pair=[];
 					click_flag=true;
 					if(success.length===card){
-						finish();	
+						finish();
 					}
 				}else{
 					
@@ -69,40 +96,22 @@ for(var i=0;i<card;i++){
 			}else{
 				
 			}
-			
-			
 			return true;
 		}else{
 			return false;
 		}
 	});
-		
-	})(flip_card);
-	
-	gameboard.appendChild(flip_card);
-	flip_card.appendChild(flip_card_inner);
-	flip_card_inner.appendChild(flip_card_front);
-	flip_card_inner.appendChild(flip_card_back);
 	
 }
+
 
 function finish(){
-	flipAll();
+	
+	end_time=new Date;
 	//alert('게임 승리')
-	
-	
+	click_flag=false;
+	end_flip(end_time-star_time);
+	success=[];
 	
 }
 
-function flipAll(){
-	for(var i=0;i<card;i++){
-		
-	(function(c){
-	setTimeout(function(){
-	
-		gameboard.childNodes[c].classList.toggle('flipped');
-		
-	},900+i*200);})(i);
-		
-	}
-}
