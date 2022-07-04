@@ -149,4 +149,7 @@ document.querySelector('#nightmode_togle')
 	https://itun.tistory.com/501
 	
 	
+28) CSS중앙정렬
+	https://velog.io/@hsecode/CSS-%EC%88%98%EC%A7%81-%EC%A4%91%EC%95%99-%EC%A0%95%EB%A0%AC
+	
 	
