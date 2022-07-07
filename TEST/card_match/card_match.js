@@ -59,21 +59,24 @@ function start(){
 	//뒷면 색깔세팅 다시
 	for(var i=0;i<card;i++){
 		gameboard.childNodes[i].childNodes[0].childNodes[1].style.backgroundColor=color[i];;
-				
 	}
 }
 start();
+//1.flip-card에 태그 달기 => 뒤집어진 카드도 클릭 가능 / 클릭과 flip class의 조절이 꼬일수 있음
+//2.flip_card_front에 태그달기 => flag나 class를 안따져도 무조건 앞면만 뒤집기 가능(방금 실험도 해봄)
 
+//c == class flip-card 제일 바깥 태그
 function addCardListener(c){
 	
 	//얘를 밖으로 빼면 c.을 전부 수정하고 매개변수로 바꿔야해서 그냥 넣어두고 flag로 조절하겠음
 	//굳이 removeEventListener를 안쓰고 해보겠음
 	c.addEventListener('click',function(){
-		if(click_flag && !success.includes(c.childNodes[0].childNodes[1])){
+		if(click_flag && !success.includes(c)){
 			c.classList.toggle('flipped');
 			//console.log(c.childNodes[0].childNodes[1]);
 			if(c.classList.contains('flipped')){
-			pair.push(c.childNodes[0].childNodes[1]);
+			//pair.push(c.childNodes[0].childNodes[1]);
+			pair.push(c);
 			}else{
 			pair=[];
 				return 0;
@@ -81,25 +84,29 @@ function addCardListener(c){
 			
 			if(pair.length===2){
 				click_flag=false;
-				if(pair[0].style.backgroundColor===pair[1].style.backgroundColor){
+				
+				var pair_color=[];
+				for(const card of pair){
+					pair_color.push(card.childNodes[0].childNodes[1].style.backgroundColor);	
+				}
+				
+				if(pair_color[0]===pair_color[1]){
 					success = success.concat(pair);
 					pair=[];
 					click_flag=true;
 					if(success.length===card){
 						finish();
 					}
-				}else{
-					
+				}else{	
 					setTimeout(function() {
 						//console.log(pair[0]);
-						pair[0].parentNode.parentNode.classList.remove('flipped');
-						pair[1].parentNode.parentNode.classList.remove('flipped');
+						pair[0].classList.remove('flipped');
+						pair[1].classList.remove('flipped');
 						pair=[];
 						click_flag=true;
 					},1000);	
 				}
 			}else{
-				
 			}
 			return true;
 		}else{
@@ -117,7 +124,5 @@ function finish(){
 	click_flag=false;
 	end_flip(end_time-star_time);
 	success=[];
-	
-	
 }
 

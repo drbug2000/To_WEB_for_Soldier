@@ -1,30 +1,23 @@
 function flipAll(){
 	for(var i=0;i<card;i++){
-		
-	(function(c){
-	setTimeout(function(){
 	
-		gameboard.childNodes[c].classList.toggle('flipped');
-		
-	},900+i*200);})(i);
+		(function(c){
+		setTimeout(function(){
+			gameboard.childNodes[c].classList.toggle('flipped');
+		},700+i*130);})(i);
 		
 	}
 }
 
 function flipTogeter(){
-	
-	
 	for(var i=0;i<card;i++){
-		
-	(function(c){
-	setTimeout(function(){
 	
-		gameboard.childNodes[c].classList.toggle('flipped');
-	
-	},500);})(i);
+		(function(c){
+			setTimeout(function(){
+			gameboard.childNodes[c].classList.toggle('flipped');
+		},500);})(i);	
 		
 	}
-
 }
 
 //세로, 가로
@@ -36,8 +29,7 @@ function flipDiagonal(row,col,start_time){
 	function flip_(c,t){
 		setTimeout(function(){
 		gameboard.childNodes[c].classList.toggle('flipped');
-		
-	},start_time+t*175);
+		},start_time+t*175);
 	}
 
 	while(log.length<card){
@@ -57,7 +49,8 @@ function flipDiagonal(row,col,start_time){
 		}
 	//console.log(i);
 	i++;
-	}	
+	}
+	
 }
 
 function flipDiagonal_(row,col,start_time){
@@ -83,7 +76,7 @@ function flipDiagonal_(row,col,start_time){
 			
 		}while(k<card)
 			//console.log(k);
-	console.log(i);
+	//console.log(i);
 	if(i<col-1){
 		i++;
 		time++;
@@ -91,15 +84,12 @@ function flipDiagonal_(row,col,start_time){
 		i=i+col;
 		time++;
 	}
-		
 	}
 }
 
 
 function close_all(card,start_time){
-	
-	
-	
+
 	function flip_(c,t){
 		setTimeout(function(){
 		gameboard.childNodes[c].classList.remove('flipped');
@@ -151,7 +141,6 @@ function end_flip(timer){
 		pair=[];
 	}
 	
-	
 	flipAll();
 	var target_card;
 	var index=1;
@@ -170,7 +159,5 @@ function end_flip(timer){
 	target_card.textContent = '클릭';
 	target_card.addEventListener('click',restart_button);
 	
-	
-	
-	
+
 }
