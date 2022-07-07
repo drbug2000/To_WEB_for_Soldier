@@ -69,10 +69,15 @@ function addCardListener(c){
 	//얘를 밖으로 빼면 c.을 전부 수정하고 매개변수로 바꿔야해서 그냥 넣어두고 flag로 조절하겠음
 	//굳이 removeEventListener를 안쓰고 해보겠음
 	c.addEventListener('click',function(){
-		if(click_flag && !c.classList.contains('flipped')){
-			c.classList.add('flipped');
+		if(click_flag && !success.includes(c.childNodes[0].childNodes[1])){
+			c.classList.toggle('flipped');
 			//console.log(c.childNodes[0].childNodes[1]);
+			if(c.classList.contains('flipped')){
 			pair.push(c.childNodes[0].childNodes[1]);
+			}else{
+			pair=[];
+				return 0;
+			}
 			
 			if(pair.length===2){
 				click_flag=false;
