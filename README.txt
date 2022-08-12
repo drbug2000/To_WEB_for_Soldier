@@ -13,7 +13,8 @@ https://drbug2000.github.io/To_WEB_for_Soldier/
 2022.04.12 : Javascript 시작
 2022.04.17 : HTML+CSS+javaScript(생활코딩) 교재 1회독
 2022.05.17 : '웹 게임을 만들며 배우는 JavaScript'수강 진행중(Chapter 5)(현재 휴가중)
-
+2022.07.11~07.22 : 해상침투훈련
+2022.08.12 : 이사 등의 이유로 휴식기를 갖고 복귀
 
 
 -first_wed : 첫 웹페이지 작업 (HTML공부) 추후 나의 웹사이트 메인으로 바꿀 계획중

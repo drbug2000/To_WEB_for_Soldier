@@ -153,3 +153,17 @@ document.querySelector('#nightmode_togle')
 	https://velog.io/@hsecode/CSS-%EC%88%98%EC%A7%81-%EC%A4%91%EC%95%99-%EC%A0%95%EB%A0%AC
 	
 	
+29) JS의 반복문 (for_of, for_in, .forEach() )
+	
+	-for_of
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+	
+	-for_in
+	https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...in
+	
+	-.forEach
+	https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+	
+
+30)*****call by ~~~
+	

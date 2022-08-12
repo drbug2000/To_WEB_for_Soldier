@@ -12,7 +12,7 @@ https://drbug2000.github.io/To_WEB_for_Soldier/
 2022.06.05 : Minesweeper 개발 종료
 2022.06.11 : 일주일 휴식후 reaction test 게임 개발 시작/완료
 2022.06.25 : 건강 상의 이유로 휴식 후 다시 개발 재게 + frogy_mode 지뢰찾기에 적용
-
+2022.07.12~7.22 : 해상침투훈련 
 
 
 
@@ -81,9 +81,14 @@ https://www.youtube.com/watch?v=A8XttQMR16Q
 
 }
 
+Bazzi - Myself 
 
+😮 [𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭] 나왔다 2탄! 와 이게 국내 음악이라고? 팝송 같은 한국 아티스트 음악
 https://www.youtube.com/watch?v=5r_GbhMRMZ0
+{
 
+
+}
 
 --------------SORCE---------------------------
 
